@@ -35,6 +35,10 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
+4. Download model:
+   - Download file model dari [Google Drive](https://drive.google.com/file/d/1FvjZ7fhonrKu9qdM-tR5b2e0aRVB6Yvc/view?usp=sharing)
+   - Letakkan file `final_model_100.h5` di folder `model/`
+
 ## Penggunaan
 
 1. Pastikan model sudah ada di folder `model/` dengan nama `final_model_100.h5`
