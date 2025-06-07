@@ -6,6 +6,7 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import img_to_array
 import time
 import os
+import gdown
 
 # Konfigurasi halaman
 st.set_page_config(
@@ -19,16 +20,22 @@ st.markdown("<h1 style='text-align: center;'>Deteksi Katarak</h1>", unsafe_allow
 
 st.markdown("<p style='text-align: center;'>Unggah gambar mata untuk memeriksa apakah terdapat katarak</p>", unsafe_allow_html=True)
 
+# Fungsi untuk mengunduh model
+def download_model():
+    model_path = 'model/final_model_100.h5'
+    if not os.path.exists(model_path):
+        os.makedirs('model', exist_ok=True)
+        url = 'https://drive.google.com/uc?id=1FvjZ7fhonrKu9qdM-tR5b2e0aRVB6Yvc'
+        gdown.download(url, model_path, quiet=False)
+    return model_path
+
 # Fungsi untuk memuat model
 @st.cache_resource
 def load_eye_model():
     try:
-        model_path = 'model/final_model_100.h5'
-        if os.path.exists(model_path):
-            model = load_model(model_path)
-            return model
-        st.error("File model tidak ditemukan")
-        return None
+        model_path = download_model()
+        model = load_model(model_path)
+        return model
     except Exception as e:
         st.error(f"Gagal memuat model: {str(e)}")
         return None
