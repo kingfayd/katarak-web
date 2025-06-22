@@ -30,7 +30,7 @@ def download_model():
     model_path = 'model/final_model_100.h5'
     if not os.path.exists(model_path):
         os.makedirs('model', exist_ok=True)
-        url = 'https://drive.google.com/uc?id=1FvjZ7fhonrKu9qdM-tR5b2e0aRVB6Yvc'
+        url = 'https://drive.google.com/uc?id=1dAQvcVqh-THln51V_lamzlTBrFHsxmwe'
         gdown.download(url, model_path, quiet=False)
     return model_path
 
