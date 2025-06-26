@@ -27,10 +27,10 @@ st.set_page_config(
 # =====================
 # Fungsi untuk mengunduh model
 def download_model():
-    model_path = 'model/final_model_100.h5'
+    model_path = 'model/klasifikasi-katarak.h5'
     if not os.path.exists(model_path):
         os.makedirs('model', exist_ok=True)
-        url = 'https://drive.google.com/uc?id=1dAQvcVqh-THln51V_lamzlTBrFHsxmwe'
+        url = 'https://drive.google.com/uc?id=1Kc9H_L2Os3lgqd74ux-1yfSM0OXMUssi'
         gdown.download(url, model_path, quiet=False)
     return model_path
 
