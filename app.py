@@ -30,7 +30,7 @@ def download_model():
     model_path = 'model/klasifikasi-katarak.h5'
     if not os.path.exists(model_path):
         os.makedirs('model', exist_ok=True)
-        url = 'https://drive.google.com/uc?id=15-UBQWHgcSh33m8OcHCKG_7tGGTMuY-Q'
+        url = 'https://drive.google.com/uc?id=1YM-91fH6R0tCAp7NuX4skH0HDAPQjXYS'
         gdown.download(url, model_path, quiet=False)
     return model_path
 
